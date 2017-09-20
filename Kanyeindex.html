@@ -1,7 +1,30 @@
 <html>
 
 <head>
-
+<script>
+var looper;
+var degrees = 0;
+function rotateAnimation(el,speed){
+	var elem = document.getElementById(el);
+	if(navigator.userAgent.match("Chrome")){
+		elem.style.WebkitTransform = "rotate("+degrees+"deg)";
+	} else if(navigator.userAgent.match("Firefox")){
+		elem.style.MozTransform = "rotate("+degrees+"deg)";
+	} else if(navigator.userAgent.match("MSIE")){
+		elem.style.msTransform = "rotate("+degrees+"deg)";
+	} else if(navigator.userAgent.match("Opera")){
+		elem.style.OTransform = "rotate("+degrees+"deg)";
+	} else {
+		elem.style.transform = "rotate("+degrees+"deg)";
+	}
+	looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
+	degrees++;
+	if(degrees > 359){
+		degrees = 1;
+	}
+	document.getElementById("status").innerHTML = "rotate("+degrees+"deg)";
+}
+</script>
 	<title> Kanye For Leyefe</title>
 <style>
 
@@ -39,6 +62,7 @@
 	<div id = "header">
 		<h1> Welcome to the World of Kanye </h1>
 		<img id="kanyehead" src="https://www.virginchan.org/boards/b/image/1387/88/13878869813436.png" alt="kanyehead">
+		<script>rotateAnimation("img1",30);</script>
 	</div>
 
 	<p> This is a webpage dedicated to Kanye Fricken West </p>
