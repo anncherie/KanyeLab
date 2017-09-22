@@ -94,22 +94,23 @@
 <script>
 	
 	const shakeDiv = document.getElementById('shake');
-	var hi = 0;
-	var name = '';
+
 	
-    shakeDiv.onclick = function() {
-	shakeDiv.className = 'click';
-	setTimeout(function() {shakeDiv.className = ''; }, 2000);
+    
 
-let song = 1;
+
+
+
+
+
+let song = 0;
     function getSong() {
-        return `kanye${song++}.m4a`;
+		song = (song%16) + 1
+		if(song > 15){
+			song = 1;
+		}
+        return `kanye${song}.m4a`;
     }
-	if (song == 15){
-		song = 1;
-	}
-
-
 
 shakeDiv.onclick = function() {
         shakeDiv.className = 'click';
@@ -130,43 +131,8 @@ shakeDiv.onclick = function() {
 
 
 
-		// if (hi == 0){
-       	// 	name = 'kanye1.m4a';
-			   
-		// }
-		// if(hi == 1){
-		// 	name = 'kanye2.m4a';
-			
-       
-		// }
-		// if(hi == 2){
-		// 	name = 'kanye3.m4a';
-		// }
-		// if(hi == 3){
-		// 	name = 'kanye4.m4a';	
-		// }
-		// if(hi == 4){
-		// 	name = 'kanye5.m4a';	
-		// }
-		// if(hi == 5){
-		// 	name = 'kanye6.m4a';
-		// }
-		// if(hi == 6){
-		// 	name = 'kanye7.m4a';	
-		// }
-		// if(hi == 7){
-		// 	name = 'kanye8.m4a';
-		// 	hi = 0;	
-		// }
-		// console.log(name);
-		// console.log(hi);
-		// var audio = new Audio(name);
-        // audio.play();
-		// hi++;
-  		// console.log(name);
-		// console.log(hi);	
-			  
-			  }		
+
+			  	
 
 
 
