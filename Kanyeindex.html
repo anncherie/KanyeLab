@@ -17,19 +17,13 @@
 
 
 <style>
-	@-webkit-keyframes shakeelement {
-	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
-	10% { -webkit-transform: translate(-1px, -2px) rotate(-10deg); }
-	20% { -webkit-transform: translate(-3px, 0px) rotate(10deg); }
-	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
-	40% { -webkit-transform: translate(1px, -1px) rotate(10deg); }
-	50% { -webkit-transform: translate(-1px, 2px) rotate(-10deg); }
-	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
-	70% { -webkit-transform: translate(2px, 1px) rotate(-10deg); }
-	80% { -webkit-transform: translate(-1px, -1px) rotate(10deg); }
-	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
-	100% { -webkit-transform: translate(1px, -2px) rotate(-10deg); }
+@-webkit-keyframes shakeelement {
+    0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+    25% { -webkit-transform: translate(-1px, -2px) rotate(-10deg); }
+    75% { -webkit-transform: translate(-3px, 0px) rotate(10deg); }
+
 }
+
 
 
 
@@ -66,7 +60,7 @@
 		font-size: 60px;
 	}
 	p{
-		color: black;
+		color: teal;
 	}
 	body{
 		background-color: #f58b57;
@@ -90,7 +84,7 @@
 	</div>
 
 	<div id = "instructions">
-		<p> Click on my face to get a 'lil bit of Kanye</p>
+		<p> Click on my face you mother hubbard</p>
 		</div>
 	</div>
 
@@ -102,81 +96,75 @@
 	const shakeDiv = document.getElementById('shake');
 	var hi = 0;
 	var name = '';
-	var audio = new Audio(name);
-	hi++;
+	
     shakeDiv.onclick = function() {
 	shakeDiv.className = 'click';
 	setTimeout(function() {shakeDiv.className = ''; }, 2000);
-		console.log(name);
-		console.log(hi);
-		
-		// switch(hi) {
-		// 	case 0:
-		// 		name = 'kanye1.m4a';
-		//  		console.log(name);
-		//  		console.log(hi);
-		// 		audio.play();
-		// 		break;
-		// 	case 1:
-		// 		name = 'kanye2.m4a';
-		// 	 	console.log(name);
-		// 	 	console.log(hi);
-		// 		audio.play();
-		// 		break;
-		// 	default:
-		// 		audio.play();
 
-
-		// }
+let song = 1;
+    function getSong() {
+        return `kanye${song++}.m4a`;
+    }
+	if (song == 15){
+		song = 1;
+	}
 
 
 
+shakeDiv.onclick = function() {
+        shakeDiv.className = 'click';
+        
 
-		if (hi = 0){
-       		name = 'kanye1.m4a';
-			console.log(name);
-			console.log(hi);
-			
-		}
-		if(hi = 1){
-			name = 'kanye2.m4a';
-			console.log(name);
-			console.log(hi);
-		}
-		if(hi = 2){
-			console.log("shalom");
-			name = 'kanye3.m4a';
-			console.log(name);
-			console.log(hi);
-		}
-		if(hi = 3){
-			audio = new Audio('kanye4.m4a');
-			console.log(name);
-		console.log(hi);
-			
-		}
-		if(hi = 4){
-			audio = new Audio('kanye5.m4a');
-			console.log(name);
-		console.log(hi);
-			
-		}
-		if(hi = 5){
-			audio = new Audio('kanye6.m4a');
-		
-		}
-		if(hi = 6){
-			audio = new Audio('kanye7.m4a');
-			
-		}
-		if(hi = 7){
-			audio = new Audio('kanye8.m4a');
-			
-		}
-		
+        var audio = new Audio(getSong());
+        audio.onended = function() {
+            
+            shakeDiv.className = '';
+        }
         audio.play();
-		hi++;
-  			
+
+    }
+
+
+
+
+
+
+
+		// if (hi == 0){
+       	// 	name = 'kanye1.m4a';
+			   
+		// }
+		// if(hi == 1){
+		// 	name = 'kanye2.m4a';
+			
+       
+		// }
+		// if(hi == 2){
+		// 	name = 'kanye3.m4a';
+		// }
+		// if(hi == 3){
+		// 	name = 'kanye4.m4a';	
+		// }
+		// if(hi == 4){
+		// 	name = 'kanye5.m4a';	
+		// }
+		// if(hi == 5){
+		// 	name = 'kanye6.m4a';
+		// }
+		// if(hi == 6){
+		// 	name = 'kanye7.m4a';	
+		// }
+		// if(hi == 7){
+		// 	name = 'kanye8.m4a';
+		// 	hi = 0;	
+		// }
+		// console.log(name);
+		// console.log(hi);
+		// var audio = new Audio(name);
+        // audio.play();
+		// hi++;
+  		// console.log(name);
+		// console.log(hi);	
 			  
 			  }		
 
